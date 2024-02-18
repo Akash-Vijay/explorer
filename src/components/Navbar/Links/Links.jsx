@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from "./links.module.css"
+import NavLink from "./NavLinks/NavLink";
 const Links = () => { 
 
   const links = [
@@ -8,9 +10,23 @@ const Links = () => {
     {"title": "Blog", "path":"/blog"},
   ];
 
+  //Temp Data
+  const session = true;
+  const isAdmin = true;
+
   return (
-    <div>
-      {links.map((link=>(<Link href={link.path} key={link.title}>{link.title}</Link>)))}
+    <div className={styles.links}> 
+      {links.map((link=>(<NavLink item={link}></NavLink>)))}
+      {session? (
+          <>
+          {
+          isAdmin && (<NavLink item={{"title": "Admin", "path": "/admin"}}>Admin</NavLink>)
+          }
+        <button>Logout</button>
+          </>
+         ): 
+         (<NavLink item={{"title": "Login", "path": "/login"}}>Login</NavLink>)
+         }
     </div>
   )
 }
