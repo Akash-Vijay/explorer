@@ -1,6 +1,12 @@
 .links {
   display: flex;
-  
   align-items: center;
   gap: 10px;
+}
+
+.logout {
+padding: 10px;
+margin-left: 15px;
+cursor: pointer;
+font-weight: bold;
 }

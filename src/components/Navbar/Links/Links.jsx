@@ -22,7 +22,7 @@ const Links = () => {
           {
           isAdmin && (<NavLink item={{"title": "Admin", "path": "/admin"}}>Admin</NavLink>)
           }
-        <button>Logout</button>
+        <button className={styles.logout}>Logout</button>
           </>
          ): 
          (<NavLink item={{"title": "Login", "path": "/login"}}>Login</NavLink>)
